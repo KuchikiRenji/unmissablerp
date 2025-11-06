@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const discordUrl = (process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx") as string;
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <Image
@@ -35,7 +36,7 @@ export default function Hero() {
             Apply (Whitelist)
           </Link>
           <Link
-            href={process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx"}
+            href={discordUrl}
             className="px-6 py-3 rounded-pill bg-accent-blue2/80 hover:bg-accent-blue2 text-white font-medium transition"
           >
             Join Discord

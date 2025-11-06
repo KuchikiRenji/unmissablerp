@@ -14,6 +14,7 @@ const navItems = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const discordUrl = (process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx") as string;
   return (
     <header className="sticky top-0 z-40 backdrop-blur border-b border-white/10 bg-black/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,7 +30,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href={process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx"}
+              href={discordUrl}
               className="px-4 py-2 rounded-pill bg-brand-orange text-black font-medium hover:scale-105 hover:shadow-glow transition-transform"
             >
               Join Discord
@@ -62,7 +63,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href={process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx"}
+                href={discordUrl}
                 className="block py-2 text-black bg-brand-orange rounded-md text-center font-medium"
                 onClick={() => setOpen(false)}
               >
