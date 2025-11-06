@@ -1,0 +1,42 @@
+{
+  "name": "unmissablerp-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "framer-motion": "11.0.24",
+    "swr": "2.2.5",
+    "recharts": "2.8.0",
+    "react-hook-form": "7.51.5",
+    "zod": "3.23.8",
+    "@hookform/resolvers": "3.9.0",
+    "clsx": "2.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.13",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "prettier": "3.3.3",
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.6.3",
+    "vitest": "1.6.0",
+    "@testing-library/react": "14.2.2",
+    "@testing-library/jest-dom": "6.4.6",
+    "jsdom": "24.1.0"
+  }
+}
+
+

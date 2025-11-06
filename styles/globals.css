@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #ff6a00;
+  --brand-black: #000000;
+  --blue-1: #1f4bbe;
+  --blue-2: #4f98c0;
+  --blue-3: #21327b;
+  --muted: #bdc1d6;
+}
+
+html,
+body,
+:root {
+  height: 100%;
+}
+
+body {
+  @apply bg-black text-white font-body antialiased;
+}
+
+a {
+  @apply focus:ring-2 focus:ring-[color:var(--brand-orange)] focus:outline-none;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+
