@@ -3,8 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+function isExternalUrl(url: string): boolean {
+  return url.startsWith("http://") || url.startsWith("https://") || url.startsWith("//");
+}
+
 export default function Hero() {
   const discordUrl = (process.env.NEXT_PUBLIC_DISCORD_INVITE || "https://discord.gg/9GEpKfgx") as string;
+  const isExternal = isExternalUrl(discordUrl);
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <Image
@@ -35,12 +40,23 @@ export default function Hero() {
           >
             Apply (Whitelist)
           </Link>
-          <Link
-            href={discordUrl}
-            className="px-6 py-3 rounded-pill bg-accent-blue2/80 hover:bg-accent-blue2 text-white font-medium transition"
-          >
-            Join Discord
-          </Link>
+          {isExternal ? (
+            <a
+              href={discordUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-pill bg-accent-blue2/80 hover:bg-accent-blue2 text-white font-medium transition"
+            >
+              Join Discord
+            </a>
+          ) : (
+            <Link
+              href={discordUrl as any}
+              className="px-6 py-3 rounded-pill bg-accent-blue2/80 hover:bg-accent-blue2 text-white font-medium transition"
+            >
+              Join Discord
+            </Link>
+          )}
         </div>
       </motion.div>
     </section>

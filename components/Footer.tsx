@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const socials = [
   { name: "Discord", href: "https://discord.gg/9GEpKfgx" },
   { name: "Reddit", href: "https://reddit.com" },
@@ -18,9 +16,15 @@ export default function Footer() {
         </div>
         <div className="flex gap-4 md:justify-end flex-wrap">
           {socials.map((s) => (
-            <Link key={s.name} href={s.href} className="text-white/80 hover:text-white transition">
+            <a
+              key={s.name}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 hover:text-white transition"
+            >
               {s.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
