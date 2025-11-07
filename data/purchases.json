@@ -1,0 +1,35 @@
+[
+  {
+    "id": "purchase_1762494932650_e4v5nmz5y",
+    "userId": "mock_user_bylgnjk4g",
+    "tier": "gold",
+    "priorityPoints": 50,
+    "startDate": "2025-11-07T05:55:32.650Z",
+    "expiryDate": "2025-12-07T05:55:32.650Z",
+    "discordRoleId": "",
+    "active": true,
+    "createdAt": "2025-11-07T05:55:32.650Z"
+  },
+  {
+    "id": "purchase_1762494942086_b0qyfhkp1",
+    "userId": "mock_user_bylgnjk4g",
+    "tier": "silver",
+    "priorityPoints": 25,
+    "startDate": "2025-11-07T05:55:42.086Z",
+    "expiryDate": "2025-12-07T05:55:42.086Z",
+    "discordRoleId": "",
+    "active": true,
+    "createdAt": "2025-11-07T05:55:42.086Z"
+  },
+  {
+    "id": "purchase_1762495230846_vpx4x2tno",
+    "userId": "mock_user_v81q3ioim",
+    "tier": "silver",
+    "priorityPoints": 25,
+    "startDate": "2025-11-07T06:00:30.846Z",
+    "expiryDate": "2025-12-07T06:00:30.846Z",
+    "discordRoleId": "",
+    "active": true,
+    "createdAt": "2025-11-07T06:00:30.846Z"
+  }
+]
