@@ -31,22 +31,28 @@ export default function StoreGrid() {
         })
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
 
-      if (data.ok) {
+      if (data && data.ok) {
         setToast({
-          message: `You've been granted ${selectedTier?.name}! 🎉`,
+          message: `You've been granted ${selectedTier?.name || 'Priority'}! 🎉`,
           type: "success"
         });
       } else {
-        throw new Error(data.message || "Purchase failed");
+        throw new Error(data?.message || "Purchase failed");
       }
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Purchase failed. Please try again.";
       setToast({
-        message: error instanceof Error ? error.message : "Purchase failed. Please try again.",
+        message: errorMessage,
         type: "error"
       });
-      throw error;
+      // Don't re-throw to prevent unhandled promise rejection
+      console.error("Purchase error:", error);
     }
   };
 

@@ -1,13 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
 import useSWR from "swr";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+const fetcher = async (url: string) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      return { configured: false };
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to check Discord config:", error);
+    return { configured: false };
+  }
+};
 
 export default function DiscordConfigWarning() {
-  const { data } = useSWR<{ configured: boolean }>("/api/discord/checkConfig", fetcher);
+  const { data, error } = useSWR<{ configured: boolean }>("/api/discord/checkConfig", fetcher);
 
-  if (data?.configured) {
+  // Don't show warning if we're still loading or if configured
+  if (!data || data.configured || error) {
     return null;
   }
 

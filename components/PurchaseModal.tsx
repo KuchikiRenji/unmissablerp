@@ -41,7 +41,9 @@ export default function PurchaseModal({
       }, 2000);
     } catch (error) {
       setIsProcessing(false);
+      setShowConfetti(false);
       console.error("Purchase failed:", error);
+      // Error is already handled by parent component's toast
     }
   };
 
