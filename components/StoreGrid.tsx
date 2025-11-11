@@ -20,7 +20,7 @@ export default function StoreGrid() {
       {items.map((item) => (
         <div key={item.id} className="glass rounded-card overflow-hidden border border-white/10">
           <div className="relative h-40">
-            <Image src={item.imageSrc} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+            <Image src={item.imageSrc} alt={item.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" style={{ top: 0, right: 0, bottom: 0, left: 0 }} />
           </div>
           <div className="p-5">
             <div className="flex items-center justify-between">

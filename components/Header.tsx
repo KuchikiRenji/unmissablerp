@@ -25,7 +25,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           <Link href={"/" as any} className="flex items-center gap-2">
-            <Image src="/logo.png" alt="UNMISSABLERP" width={32} height={32} className="rounded-lg object-contain" />
+            <Image src="/logo.png" alt="UNMISSABLERP" width={32} height={32} className="rounded-lg object-contain" priority />
             <span className="font-heading font-semibold tracking-wide">UNMISSABLERP</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
