@@ -1,0 +1,111 @@
+[
+  {
+    "id": "script-1",
+    "name": "Advanced Banking System",
+    "type": "script",
+    "source": "custom",
+    "status": "active",
+    "previewImage": "/IMAGEA.jpg",
+    "description": "Custom banking script with full transaction history and ATM integration"
+  },
+  {
+    "id": "script-2",
+    "name": "ESX Framework",
+    "type": "script",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGEB.jpg",
+    "description": "Standard ESX framework for roleplay server"
+  },
+  {
+    "id": "script-3",
+    "name": "Custom Job System",
+    "type": "script",
+    "source": "custom",
+    "status": "testing",
+    "previewImage": "/IMAGEC.jpg",
+    "description": "Dynamic job system with custom progression"
+  },
+  {
+    "id": "script-4",
+    "name": "qb-core",
+    "type": "script",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGED.jpg",
+    "description": "QB-Core framework integration"
+  },
+  {
+    "id": "mlo-1",
+    "name": "Luxury Penthouse",
+    "type": "mlo",
+    "source": "custom",
+    "status": "active",
+    "previewImage": "/IMAGEE.jpg",
+    "description": "Custom-built luxury penthouse MLO with full interior"
+  },
+  {
+    "id": "mlo-2",
+    "name": "Underground Bunker",
+    "type": "mlo",
+    "source": "custom",
+    "status": "testing",
+    "previewImage": "/IMAGEA.jpg",
+    "description": "Secret underground bunker for criminal activities"
+  },
+  {
+    "id": "mlo-3",
+    "name": "Standard Police Station",
+    "type": "mlo",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGEB.jpg",
+    "description": "Pre-made police station MLO"
+  },
+  {
+    "id": "mlo-4",
+    "name": "Nightclub Interior",
+    "type": "mlo",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGEC.jpg",
+    "description": "Standard nightclub MLO"
+  },
+  {
+    "id": "vehicle-1",
+    "name": "Custom Supercar Pack",
+    "type": "vehicle",
+    "source": "custom",
+    "status": "active",
+    "previewImage": "/IMAGED.jpg",
+    "description": "Custom supercar pack with unique handling"
+  },
+  {
+    "id": "vehicle-2",
+    "name": "Police Vehicle Pack",
+    "type": "vehicle",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGEE.jpg",
+    "description": "Standard police vehicle pack"
+  },
+  {
+    "id": "vehicle-3",
+    "name": "Custom Motorcycle Collection",
+    "type": "vehicle",
+    "source": "custom",
+    "status": "pending",
+    "previewImage": "/IMAGEA.jpg",
+    "description": "Custom motorcycle models with unique designs"
+  },
+  {
+    "id": "vehicle-4",
+    "name": "Emergency Services Pack",
+    "type": "vehicle",
+    "source": "premade",
+    "status": "active",
+    "previewImage": "/IMAGEB.jpg",
+    "description": "Standard ambulance and fire truck pack"
+  }
+]
+

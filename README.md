@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# unmissableRP
-=======
 # UNMISSABLERP — Next-level GTA RP (Next.js + Tailwind + TS)
 
 Modern, animated website scaffold for a FiveM GTA RP community. Uses Next.js App Router, Tailwind, TypeScript, Framer Motion, SWR, and Recharts. Built for Vercel.
@@ -29,12 +26,20 @@ Open http://localhost:3000
 ## Environment variables
 Create `.env.local` in the project root:
 
-```
+```env
 # Discord bot token placeholder for future server/bot actions
 DISCORD_BOT_TOKEN=
 
 # Public invite (used in CTAs)
 NEXT_PUBLIC_DISCORD_INVITE=https://discord.gg/9GEpKfgx
+
+# OneDrive API integration (for Server Assets sync - future)
+# Once Hayden provides OneDrive/SharePoint API access, configure:
+ONEDRIVE_API_KEY=
+# OR use Microsoft Graph API:
+AZURE_CLIENT_ID=
+AZURE_CLIENT_SECRET=
+ONEDRIVE_FOLDER_PATH=/ServerAssets
 ```
 
 ## Pages
@@ -42,11 +47,13 @@ NEXT_PUBLIC_DISCORD_INVITE=https://discord.gg/9GEpKfgx
 - `/apply` Whitelist application (client + server validation; posts to `/api/apply`)
 - `/store` Store placeholder (mock items; checkout disabled)
 - `/community` Social hub (links + Discord widget + teaser + Web3 placeholder)
-- `/dashboard` Public stats (live player count; charts; 10s polling)
+- `/dashboard` Public stats (live player count; charts; 10s polling) + **Server Assets management**
 
 ## APIs (mock)
 - `GET /api/stats` → example live stats JSON
 - `POST /api/apply` → returns `{ ok: true }`
+- `GET /api/assets/[type]` → returns list of assets (script, mlo, or vehicle)
+- `POST /api/assets/upload` → placeholder for OneDrive sync (future)
 
 To swap in real FiveM stats, replace logic inside `lib/mock.ts` and/or point the `fetcher` to your own endpoint.
 
@@ -61,6 +68,48 @@ export type StatsResponse = {
   playersOverTime: { t: string; v: number }[];
 };
 ```
+
+## Server Assets Management
+
+The dashboard includes a **Server Assets** section for managing in-game assets (scripts, MLOs, vehicles) from Hayden's OneDrive folder.
+
+### Features
+- **Three asset types**: Scripts, MLOs, and Vehicles
+- **Custom vs Pre-made classification**: Toggle buttons to mark assets as custom-built or pre-existing
+- **Filtering & Search**: Filter by source (custom/premade), status (active/testing/pending), and search by name/description
+- **Animated UI**: Framer Motion transitions for tab switching and card loading
+- **Local storage**: Classification preferences saved client-side (ready for backend sync)
+
+### Current Setup (Mock Data)
+Assets are stored in `data/assets.json`. Each asset has:
+- `id`: Unique identifier
+- `name`: Asset name
+- `type`: "script" | "mlo" | "vehicle"
+- `source`: "custom" | "premade"
+- `status`: "active" | "pending" | "testing"
+- `previewImage`: Optional image path
+- `description`: Optional description
+
+### Updating Asset Data
+Edit `data/assets.json` directly or replace the JSON file with your own asset list. The structure follows the `AssetItem` interface in `lib/types.ts`.
+
+### Future OneDrive Integration
+
+Once Hayden provides:
+1. **OneDrive/SharePoint API access** (Microsoft Graph API credentials)
+2. **Structured asset list** (JSON or folder structure)
+
+The app will automatically:
+- Sync assets from OneDrive folder
+- Download preview images
+- Update classification metadata
+- Keep local database in sync
+
+**Implementation notes** (see `app/api/assets/upload/route.ts`):
+- Use Microsoft Graph API: `GET https://graph.microsoft.com/v1.0/me/drive/root:/ServerAssets:/children`
+- Authenticate with Azure AD app registration
+- Map folder structure to asset types (Scripts/, MLOs/, Vehicles/)
+- Store metadata in `data/assets.json` or migrate to database
 
 ## Brand & design tokens
 Tailwind theme contains:
@@ -113,8 +162,12 @@ Includes a simple ApplyForm validation test using Vitest + Testing Library.
 ## Project structure
 ```
 app/
-  api/apply/route.ts
-  api/stats/route.ts
+  api/
+    apply/route.ts
+    stats/route.ts
+    assets/
+      [type]/route.ts
+      upload/route.ts
   apply/page.tsx
   community/page.tsx
   dashboard/page.tsx
@@ -123,11 +176,15 @@ app/
 components/
   AnimatedCounter.tsx
   ApplyForm.tsx
+  AssetCard.tsx
   DashboardStats.tsx
   DiscordJoin.tsx
   FeatureCard.tsx
   Footer.tsx
   Header.tsx
+  ServerAssets.tsx
+data/
+  assets.json
 lib/
   mock.ts
   types.ts
@@ -140,10 +197,8 @@ styles/
 - Framer Motion for page/section motion without overdoing it
 - Live stats poll every 10s via SWR; animated numbers for delight
 - Store is non-transactional placeholder by intent
+- Server Assets uses animated tab transitions and card hover effects
 
 ---
 
 Made sensible defaults where ambiguous. Adjust copy in `lib/types.ts` and colors in `tailwind.config.js`.
-
-
->>>>>>> 554a449 (initial commit)
