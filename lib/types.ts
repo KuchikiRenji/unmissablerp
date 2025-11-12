@@ -14,6 +14,16 @@ export type ApplyRequest = {
   why: string;
 };
 
+export interface AssetItem {
+  id: string;
+  name: string;
+  type: "script" | "mlo" | "vehicle";
+  source: "custom" | "premade";
+  status: "active" | "pending" | "testing";
+  previewImage?: string;
+  description?: string;
+}
+
 export const copy = {
   hero: {
     headline: "UNMISSABLERP — Next-level GTA RP",

@@ -16,7 +16,7 @@ export default function FeatureCard({ title, description, imageSrc }: FeatureCar
       className="glass rounded-card overflow-hidden border border-white/10"
     >
       <div className="relative h-40">
-        <Image src={imageSrc} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+        <Image src={imageSrc} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" style={{ top: 0, right: 0, bottom: 0, left: 0 }} />
       </div>
       <div className="p-5">
         <h3 className="font-heading text-lg font-semibold">{title}</h3>

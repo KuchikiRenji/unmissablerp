@@ -6,7 +6,7 @@ export default function CommunityPage() {
   return (
     <div>
       <div className="relative h-56">
-        <Image src="/IMAGED.jpg" alt="Community banner" fill sizes="100vw" className="object-cover" />
+        <Image src="/IMAGED.jpg" alt="Community banner" fill sizes="100vw" className="object-cover" priority style={{ top: 0, right: 0, bottom: 0, left: 0 }} />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="font-heading text-3xl sm:text-4xl font-bold">Community</h1>

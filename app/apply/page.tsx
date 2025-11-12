@@ -5,7 +5,7 @@ export default function ApplyPage() {
   return (
     <div>
       <div className="relative h-56">
-        <Image src="/IMAGEB.jpg" alt="Apply banner" fill sizes="100vw" className="object-cover" />
+        <Image src="/IMAGEB.jpg" alt="Apply banner" fill sizes="100vw" className="object-cover" priority style={{ top: 0, right: 0, bottom: 0, left: 0 }} />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 id="apply-heading" className="font-heading text-3xl sm:text-4xl font-bold">Apply for Whitelist</h1>
